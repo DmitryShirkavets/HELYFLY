@@ -1,0 +1,71 @@
+.reviews{
+    padding: 14px 0px 14px 48px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border-top: 0.5px solid $secondaryColor;
+    border-bottom: 0.5px solid $secondaryColor;
+
+    @include media(xs) {
+        flex-direction: row;
+        gap: 14px;
+    }
+
+    @include text(14px, 400, 20px, $textColor);
+
+    span{
+        @include text(14px, 600, 20px, $textColor);
+    }
+
+    &::after{
+        content: "";
+        display: block;
+        background-image:url('../images/cup.svg');
+        background-size: 37px 41px;
+        width: 37px;
+        height: 41px;
+
+        @include media(xs) {
+            background-size: 32px 36px;
+            width: 32px;
+            height: 36px;
+            top: 5px;
+        }
+
+        position: absolute;
+        left: 0px;
+        top: 10px;
+    }
+
+    &__rating{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 7px;
+
+        &-star{
+            font-size: 20px;
+        }
+
+        & a, & label {
+            color: #aaa;
+            text-decoration: none;
+            -webkit-transition: color .4s;
+            -moz-transition: color .4s;
+            -o-transition: color .4s;
+            transition: color .4s;
+        }
+
+        & label:hover ~ label,
+        & input:focus ~ label,
+        & label:hover,
+        & a:hover,
+        & a:hover ~ a,
+        & a:focus,
+        & a:focus ~ a{
+            color: orange;
+            cursor: pointer;
+        }
+    }
+}
