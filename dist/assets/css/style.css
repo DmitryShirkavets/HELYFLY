@@ -1742,6 +1742,12 @@ body {
     padding-bottom: 40px;
 }
 
+@media (min-width: 1280px) {
+    .meeting {
+        position: relative;
+    }
+}
+
 .meeting__map {
     width: 100%;
     overflow: hidden;
@@ -1759,11 +1765,35 @@ body {
     }
 }
 
+.meeting .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media (min-width: 1280px) {
+    .meeting .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
 .meeting__content {
     border: 1px solid #c7c7c7;
     margin-top: 52px;
     padding-top: 52px;
     padding-bottom: 20px;
+    background-color: #fff;
+}
+
+@media (min-width: 576px) {
+    .meeting__content {
+        max-width: 400px;
+    }
 }
 
 .meeting__slider {
@@ -1774,6 +1804,13 @@ body {
     justify-content: center;
     -ms-flex-align: center;
     align-items: center;
+}
+
+@media (min-width: 1280px) {
+    .meeting__slider {
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
 }
 
 .meeting__slider-info {
@@ -1794,11 +1831,23 @@ body {
     left: 26px;
 }
 
+@media (min-width: 576px) {
+    .meeting__slider .slick-arrow.slick-prev {
+        left: 89px;
+    }
+}
+
 .meeting__slider .slick-arrow.slick-next {
     background: url(./../images/arrow-slider.svg);
     height: 19px;
     width: 10px;
     right: 26px;
+}
+
+@media (min-width: 576px) {
+    .meeting__slider .slick-arrow.slick-next {
+        right: 89px;
+    }
 }
 
 .meeting__slider .slick-slide {
